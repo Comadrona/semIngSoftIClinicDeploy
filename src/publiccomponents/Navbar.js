@@ -57,7 +57,7 @@ const Navbar = () => {
       <div className="navbar-links-container">
           <a href="/">Inicio</a>
           <a href="/about">Sobre nosotros</a>
-          <a href="services">Servicios</a>
+          <a href="/services">Servicios</a>
         <Link to={buttonInfo[1]}>
         <button className="primary-button">{buttonInfo[0]}</button>
         </Link>
