@@ -69,8 +69,6 @@ function UserInfoComponent() {
     }
     }
     useEffect (() => getInfo, [])
-    console.log(info)
-    if(Object.keys(info).length !== 0){
         return (
             <div className="wrapper">
                 <div className="card">
@@ -106,14 +104,6 @@ function UserInfoComponent() {
                 </div>
             </div>
         )
-    }else{
-        return(
-            <div>
-                No hay info
-                {roles}
-            </div>
-        )
-    }
 }
 
 export default UserInfoComponent
