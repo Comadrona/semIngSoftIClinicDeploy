@@ -21,22 +21,22 @@ function App() {
   return (
         <Routes>
                 <Route element={<PersistLogin/>}>
-                  <Route exact path='/' element={< HomePage />}/>
-                  <Route exact path='/services' element={< ServicesPage />}/>
-                  <Route exact path='/login' element={< LoginPage />}/>
-                  <Route exact path='/about' element={< AboutPage />}/>
+                  <Route path='/' element={< HomePage />}/>
+                  <Route path='/services' element={< ServicesPage />}/>
+                  <Route path='/login' element={< LoginPage />}/>
+                  <Route path='/about' element={< AboutPage />}/>
                   
                   
                     <Route element={<RequireAuth allowedRoles={[ROLES.Basic,ROLES.Admin]} />}>
-                      <Route exact path='/user' element={<UserInfo/>}/>
+                      <Route path='/user' element={<UserInfo/>}/>
                     </Route>
                     <Route element={<RequireAuth allowedRoles={[ROLES.Basic]} />}>
-                    <Route exact path='/appoiments' element={<AppoimentsPage/>}/>
+                    <Route path='/appoiments' element={<AppoimentsPage/>}/>
                     </Route>
                     <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
-                      <Route exact path='/admin' element={<AdminPage/>}/>
-                      <Route exact path='/admin/appoiments/:id' element={<AdminPageAppoiments/>}/>
-                      <Route exact path='/admin/appoiments/fulfilled' element={<AdminPageAppoimentsFullfiled/>}/>
+                      <Route path='/admin' element={<AdminPage/>}/>
+                      <Route path='/admin/appoiments/:id' element={<AdminPageAppoiments/>}/>
+                      <Route path='/admin/appoiments/fulfilled' element={<AdminPageAppoimentsFullfiled/>}/>
                     </Route>
                 </Route>
         </Routes>
