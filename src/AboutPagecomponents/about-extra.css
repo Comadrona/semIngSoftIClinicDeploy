@@ -1,0 +1,16 @@
+.separacion{
+    padding-inline: 7% 5%;
+}
+
+.columna{
+    margin-inline: min(2%);
+}
+
+@media (max-width: 1300px) {
+    .separacion{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;  
+    }
+}
