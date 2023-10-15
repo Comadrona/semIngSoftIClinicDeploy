@@ -50,6 +50,7 @@ function UserInfoComponent() {
         </button>
     )
     const [ info, setInfo] = useState()
+    let json;
     const getInfo = async () => {
     try {
     const response = await fetch(`${url}/users/unique`,{
@@ -62,8 +63,9 @@ function UserInfoComponent() {
             "id": id
         })
     })
-    const json = await response.json();
+    json = await response.json();
     console.log(json);
+    setInfo(json);
     } catch (err) {
     console.error(err)
     }
