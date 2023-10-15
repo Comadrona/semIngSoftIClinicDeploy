@@ -108,7 +108,11 @@ function UserInfoComponent() {
             </div>
         )
     }else{
-        //window.location.reload();
+        return(
+            <div>
+                No hay info
+            </div>
+        )
     }
 }
 
