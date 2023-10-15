@@ -63,7 +63,10 @@ function UserInfoComponent() {
         })
     })
     const json = await response.json();
-    setInfo (json)
+    if(json.message === true) setInfo(json)
+    else{
+        setInfo({name:'Jose',correo:'correo',celular:'156321'})
+    }
     } catch (err) {
     console.error(err)
     }
