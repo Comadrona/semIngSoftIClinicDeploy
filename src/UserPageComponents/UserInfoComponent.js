@@ -52,6 +52,7 @@ function UserInfoComponent() {
     let info;
     
     const getInfo = async () => {
+        console.log("entrando")
     try {
     const response = await fetch(`${url}/users/unique`,{
         method: 'POST',
