@@ -62,8 +62,8 @@ function UserInfoComponent() {
             "id": id
         })
     })
-    const json = await response.json ()
-    setInfo (json)
+    const json = await response.json();
+    console.log(json);
     } catch (err) {
     console.error(err)
     }
