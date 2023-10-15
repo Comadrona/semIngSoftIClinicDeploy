@@ -63,8 +63,7 @@ function UserInfoComponent() {
         })
     })
     const json = await response.json ()
-    if(json[0] === undefined) window.location.reload();
-    setInfo (json[0])
+    setInfo (json)
     } catch (err) {
     console.error(err)
     }
@@ -111,6 +110,7 @@ function UserInfoComponent() {
         return(
             <div>
                 No hay info
+                {roles}
             </div>
         )
     }
