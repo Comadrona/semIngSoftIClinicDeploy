@@ -49,7 +49,8 @@ function UserInfoComponent() {
              Administracion
         </button>
     )
-    const [ info, setInfo] = useState()
+    let info;
+    
     const getInfo = async () => {
     try {
     const response = await fetch(`${url}/users/unique`,{
@@ -63,9 +64,9 @@ function UserInfoComponent() {
         })
     })
     const json = await response.json();
-    if(json.message === true) setInfo(json)
+    if(json.message === true) info=json;
     else{
-        setInfo({name:'Jose',correo:'correo',celular:'156321'})
+        info={name:'Jose',correo:'correo',celular:'156321'}
     }
     } catch (err) {
     console.error(err)
