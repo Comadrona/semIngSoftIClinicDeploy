@@ -50,7 +50,6 @@ function UserInfoComponent() {
         </button>
     )
     const [ info, setInfo] = useState()
-    let json;
     const getInfo = async () => {
     try {
     const response = await fetch(`${url}/users/unique`,{
@@ -63,14 +62,15 @@ function UserInfoComponent() {
             "id": id
         })
     })
-    json = await response.json();
-    console.log(json);
-    setInfo(json);
+    const json = await response.json();
+    setInfo (json)
     } catch (err) {
     console.error(err)
     }
     }
     useEffect (() => getInfo, [])
+    console.log(info)
+    if(info){
         return (
             <div className="wrapper">
                 <div className="card">
@@ -106,6 +106,16 @@ function UserInfoComponent() {
                 </div>
             </div>
         )
+    }else{
+        return(
+            <div>
+                No hay info
+                {roles}
+                {username}
+                {id}
+            </div>
+        )
+    }
 }
 
 export default UserInfoComponent
