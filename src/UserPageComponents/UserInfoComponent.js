@@ -70,7 +70,7 @@ function UserInfoComponent() {
     }
     useEffect (() => getInfo, [])
     console.log(info)
-    if(info){
+    if(Object.keys(info).length !== 0){
         return (
             <div className="wrapper">
                 <div className="card">
