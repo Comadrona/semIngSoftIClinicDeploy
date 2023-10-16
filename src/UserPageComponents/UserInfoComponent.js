@@ -49,11 +49,8 @@ function UserInfoComponent() {
              Administracion
         </button>
     )
-    let info;
-    
+    const [ info, setInfo] = useState()
     const getInfo = async () => {
-        info = {name:'Jose',correo:'correo',celular:'156321'}
-        console.log("entrando")
     try {
     const response = await fetch(`${url}/users/unique`,{
         method: 'POST',
@@ -65,12 +62,9 @@ function UserInfoComponent() {
             "id": id
         })
     })
-    const json = await response.json();
-    console.log(json)
-    if(json.message !== undefined) info=json;
-    else{
-        info={name:'Jose',correo:'correo',celular:'156321'}
-    }
+    const json = await response.json ()
+    if(json[0] === undefined) window.location.reload();
+    setInfo (json[0])
     } catch (err) {
     console.error(err)
     }
