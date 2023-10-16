@@ -49,10 +49,11 @@ const PersistLogin = () => {
 
 
     let content
-    const publicPaths=['/','/services','/login','/about']
-    if (!persist || publicPaths.includes(pathname)) { // persist: no
+    //const publicPaths=['/','/services','/login','/about']
+    if (!persist) { // persist: no
         console.log('no persist')
         content = <Outlet />
+
     } else if (isLoading) { //persist: yes, token: no
         console.log('loading')
         content = <p>Loading...</p>
