@@ -269,7 +269,8 @@ function AppoimentsList() {
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'Algo salio mal!'
+                            text: 'Algo salio mal!',
+                            footer:json.message
                         })
                     }
                     } catch (err) {
