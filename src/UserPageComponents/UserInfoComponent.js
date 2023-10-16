@@ -15,16 +15,15 @@ function UserInfoComponent() {
     const navigate = useNavigate()
     const appoiments = () => { 
         console.log('app')
-        navigate("/appoiments"); 
+        navigate('/appoiments'); 
     }
     const admin = () => { 
         console.log('ad')
-        navigate("/admin"); 
+        navigate('/admin'); 
     }
     useEffect(() => {
         if (isSuccess){
             console.log('saliendo')
-            navigate('/')
         }
     }, [isSuccess, navigate])
     const logoutButton = (
@@ -103,7 +102,9 @@ function UserInfoComponent() {
                         </div>
                         </div>
                         <div className="card-button">
-                        {logoutButton}
+                        <Link to="/services">
+                            {logoutButton}
+                        </Link>
                         {roles === "Administrador" ? adminButton : appoimentsButton}
                         </div>
 
