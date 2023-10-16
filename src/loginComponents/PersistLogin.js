@@ -60,7 +60,7 @@ const PersistLogin = () => {
     } else if (isError) { //persist: yes, token: no
         console.log('error')
         if(!window.location.hash) {
-            window.location = window.location + '#loaded';
+            window.location = window.location + '#error';
             window.location.reload();
         }
         content = (
@@ -78,12 +78,12 @@ const PersistLogin = () => {
         )
     } else if (isSuccess && trueSuccess) { //persist: yes, token: yes
         console.log('success')
-        window.location = String(window.location).replace('#loaded','');
+        window.location = String(window.location).replace('#error','');
         content = <Outlet />
     } else if (token && isUninitialized) { //persist: yes, token: yes
         console.log('token and uninit')
         console.log(isUninitialized)
-        window.location = String(window.location).replace('#loaded','');
+        window.location = String(window.location).replace('#error','');
         content = <Outlet />
     }
 
