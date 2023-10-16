@@ -67,9 +67,10 @@ function UserInfoComponent() {
     })
     const json = await response.json();
     console.log(json)
-    if(json.message !== undefined) info=json;
-    else{
-        info={name:'Jose',correo:'correo',celular:'156321'}
+    if(json.message === true){
+        info=json;
+    }else{
+        info={message:'ERROR'};
     }
     } catch (err) {
     console.error(err)
@@ -77,7 +78,7 @@ function UserInfoComponent() {
     }
     useEffect (() => getInfo(), [])
     console.log(info)
-    if(info){
+    if(info.message !== 'ERROR'){
         return (
             <div className="wrapper">
                 <div className="card">
