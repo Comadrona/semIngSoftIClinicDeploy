@@ -75,7 +75,7 @@ function UserInfoComponent() {
     console.error(err)
     }
     }
-    useEffect (() => getInfo, [])
+    useEffect (() => getInfo(), [])
     console.log(info)
     if(info){
         return (
