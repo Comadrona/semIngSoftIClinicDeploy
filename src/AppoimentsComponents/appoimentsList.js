@@ -166,6 +166,7 @@ function AppoimentsList() {
                 if(result.isConfirmed){
                     let fechayhorafixed = result.value.date.replaceAll('-','/');
                     fechayhorafixed+=', '+result.value.time+":00";
+                    console.log(fechayhorafixed);
                     try {
                         const response = await fetch(`${url}/appoiments/`,{
                             method: 'POST',
