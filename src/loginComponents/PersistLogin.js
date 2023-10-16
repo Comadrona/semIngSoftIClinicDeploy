@@ -50,7 +50,7 @@ const PersistLogin = () => {
 
     let content
     const publicPaths=['/','/services','/login','/about']
-    if (!persist) { // persist: no
+    if (!persist || publicPaths.includes(pathname)) { // persist: no
         console.log('no persist')
         window.location.reload();
         content = <Outlet />
