@@ -7,6 +7,7 @@ import { useSendLogoutMutation } from '../loginComponents/authApiSlice'
 import adminpic from "../Assets/3.png";
 import basicpic from "../Assets/4.png";
 import { url } from '../global/url'
+import { Link } from 'react-router-dom'
 function UserInfoComponent() {
     const { username, roles,id } = useAuth()
     const [sendLogout, {
