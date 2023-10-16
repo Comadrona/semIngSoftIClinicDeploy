@@ -14,13 +14,18 @@ function UserInfoComponent() {
     }] = useSendLogoutMutation()
     const navigate = useNavigate()
     const appoiments = () => { 
+        console.log('app')
         navigate("/appoiments"); 
     }
     const admin = () => { 
+        console.log('ad')
         navigate("/admin"); 
     }
     useEffect(() => {
-        if (isSuccess) navigate('/')
+        if (isSuccess){
+            console.log('saliendo')
+            navigate('/')
+        }
     }, [isSuccess, navigate])
     const logoutButton = (
         <button
