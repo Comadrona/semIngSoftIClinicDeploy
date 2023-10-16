@@ -123,7 +123,12 @@ function LoginPage() {
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
-              text: 'El username no es valido'
+              text: 'El username no es valido',
+              footer:`
+              <b><p>El username debe seguir los siguientes parametros:</p></b>
+              <p style='text-align:left;'>1. Longitud 8-15 caracteres</p>
+              <p style='text-align:left'>2. Solo letras</p>
+              `
             })
           }else{
               try {
