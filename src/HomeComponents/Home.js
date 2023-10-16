@@ -17,7 +17,7 @@ const Home = () => {
           <p className="primary-text">
           ¡Descubre tu Belleza Interior y Exterior en Nuestra Clínica!
           </p>
-          <Link to="/services">
+          <Link to="/user">
           <button className="secondary-button">
             Registra una cita <FiArrowRight />{" "}
           </button>
