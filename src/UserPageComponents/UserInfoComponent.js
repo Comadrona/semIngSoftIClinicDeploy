@@ -63,8 +63,8 @@ function UserInfoComponent() {
         })
     })
     const json = await response.json ()
-    if(json[0] === undefined) window.location.reload();
-    setInfo (json[0])
+    if(json === undefined) window.location.reload();
+    setInfo (json)
     } catch (err) {
     console.error(err)
     }
