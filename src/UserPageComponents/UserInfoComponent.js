@@ -7,7 +7,6 @@ import { useSendLogoutMutation } from '../loginComponents/authApiSlice'
 import adminpic from "../Assets/3.png";
 import basicpic from "../Assets/4.png";
 import { url } from '../global/url'
-import { Link } from 'react-router-dom'
 function UserInfoComponent() {
     const { username, roles,id } = useAuth()
     const [sendLogout, {
@@ -25,6 +24,7 @@ function UserInfoComponent() {
     useEffect(() => {
         if (isSuccess){
             console.log('saliendo')
+            navigate('/')
         }
     }, [isSuccess, navigate])
     const logoutButton = (
@@ -103,9 +103,7 @@ function UserInfoComponent() {
                         </div>
                         </div>
                         <div className="card-button">
-                        <Link to="/services">
-                            {logoutButton}
-                        </Link>
+                        {logoutButton}
                         {roles === "Administrador" ? adminButton : appoimentsButton}
                         </div>
 

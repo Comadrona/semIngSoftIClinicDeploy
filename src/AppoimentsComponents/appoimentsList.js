@@ -446,6 +446,23 @@ function AppoimentsList() {
             </main>
             </>
           )
+    }else{
+        return(
+                <div className="work-section-wrapper">
+                  <div className="work-section-bottom espaciado">
+                    {workInfoData.map((data) => (
+                      <div className="work-section-info" key={data.title}>
+                        <div className="info-boxes-img-container">
+                          <img src={data.image} alt="" />
+                        </div>
+                        <h2>{data.title}</h2>
+                        <p>{data.text}</p>
+                        {data.button}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+        )
     }
   
 }
