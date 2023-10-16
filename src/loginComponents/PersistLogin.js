@@ -52,6 +52,7 @@ const PersistLogin = () => {
     const publicPaths=['/','/services','/login','/about']
     if (!persist || publicPaths.includes(pathname)) { // persist: no
         console.log('no persist')
+        window.location.reload();
         content = <Outlet />
         
     } else if (isLoading) { //persist: yes, token: no
