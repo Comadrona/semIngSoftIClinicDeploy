@@ -59,7 +59,10 @@ const PersistLogin = () => {
         content = <p>Loading...</p>
     } else if (isError) { //persist: yes, token: no
         console.log('error')
-        window.location.reload();
+        if(!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
         content = (
             <>
                 <Navbar/>
