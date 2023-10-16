@@ -52,7 +52,6 @@ const PersistLogin = () => {
     const publicPaths=['/','/services','/login','/about']
     if (!persist || publicPaths.includes(pathname)) { // persist: no
         console.log('no persist')
-        window.location.reload();
         content = <Outlet />
         
     } else if (isLoading) { //persist: yes, token: no
@@ -60,6 +59,7 @@ const PersistLogin = () => {
         content = <p>Loading...</p>
     } else if (isError) { //persist: yes, token: no
         console.log('error')
+        window.location.reload();
         content = (
             <>
                 <Navbar/>
