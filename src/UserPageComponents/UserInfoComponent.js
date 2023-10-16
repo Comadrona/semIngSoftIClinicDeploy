@@ -67,7 +67,7 @@ function UserInfoComponent() {
     })
     const json = await response.json();
     console.log(json)
-    if(json.message === true) info=json;
+    if(json.message !== undefined) info=json;
     else{
         info={name:'Jose',correo:'correo',celular:'156321'}
     }
