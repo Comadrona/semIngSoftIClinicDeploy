@@ -11,6 +11,7 @@ import { url } from '../global/url'
 function AppoimentsList() {
     const {id } = useAuth()
     let workInfoData;
+    let automaticButton,manualButton;
     const {
         data: services,
         isSuccess:isSuccessS
@@ -201,7 +202,7 @@ function AppoimentsList() {
               })
               //console.log(service)
         }
-        const automaticButton = (
+        automaticButton = (
             <button
                 className="btn-orange"
                 title="Automatic"
@@ -210,7 +211,7 @@ function AppoimentsList() {
                 Creamos tu cita
             </button>
         )
-        const manualButton = (
+        manualButton = (
             <button
                 className="btn-orange"
                 title="Manual"
@@ -219,22 +220,21 @@ function AppoimentsList() {
                  Selecciona la fecha
             </button>
         )
-        workInfoData = [
-            {
-            image: automatic,
-            title: "En los proximos 3 dias",
-            text: "Te generamos una cita automaticamente.",
-            button: automaticButton
-            },
-            {
-            image: Calendar,
-            title: "Por fecha",
-            text: "Registra tu cita para la fecha que quieras.",
-            button: manualButton
-            },
-        ];
     }
-    
+    workInfoData = [
+        {
+        image: automatic,
+        title: "En los proximos 3 dias",
+        text: "Te generamos una cita automaticamente.",
+        button: automaticButton
+        },
+        {
+        image: Calendar,
+        title: "Por fecha",
+        text: "Registra tu cita para la fecha que quieras.",
+        button: manualButton
+        },
+    ];
     const cancelarFunction = async(appid)=>{
         Swal.fire({
             title: '¿Estas seguro?',
