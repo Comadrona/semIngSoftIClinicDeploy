@@ -15,16 +15,16 @@ function UserInfoComponent() {
     const navigate = useNavigate()
     const appoiments = () => { 
         console.log('app')
-        navigate('/appoiments'); 
+        window.location.href = 'https://sem-ing-soft-i-clinic-deploy.vercel.app/appoiments';
     }
     const admin = () => { 
         console.log('ad')
-        navigate('/admin'); 
+        window.location.href = 'https://sem-ing-soft-i-clinic-deploy.vercel.app/admin';
     }
     useEffect(() => {
         if (isSuccess){
             console.log('saliendo')
-            navigate('/')
+            window.location.href = 'https://sem-ing-soft-i-clinic-deploy.vercel.app';
         }
     }, [isSuccess, navigate])
     const logoutButton = (
