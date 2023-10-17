@@ -389,6 +389,7 @@ function AppoimentsList() {
     }
     if(isSuccess){
         let userappoiments=[]
+        refetch()
         for(let i=0;i<appoiments.length;i++){
             if(appoiments[i].user_id === id){
                 let user={
