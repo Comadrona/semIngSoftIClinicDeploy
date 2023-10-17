@@ -389,6 +389,9 @@ function AppoimentsList() {
     }
     if(isSuccess){
         const userappoiments = appoiments.filter((item)=> item.user_id === id)
+        for(let i=0;i<userappoiments.length;i++){
+            console.log(userappoiments[i].fechayhora)
+        }
         return (
             <>
             
