@@ -388,8 +388,8 @@ function AppoimentsList() {
           })
     }
     if(isSuccess){
-        const userappoiments = appoiments.filter((item)=> item.user_id === id)
-        for(let i=0;i<userappoiments.length;i++){
+        let userappoiments = appoiments.filter((item)=> item.user_id === id)
+        for(let i=0;i<appoiments.length;i++){
             let aux = userappoiments[i].fechayhora
             userappoiments[i].fechayhora = aux.split(' ')[0]
             aux = aux.split(' ')[1]
