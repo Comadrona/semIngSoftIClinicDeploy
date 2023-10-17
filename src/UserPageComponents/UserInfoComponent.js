@@ -88,7 +88,7 @@ function UserInfoComponent() {
                         <div className="txt">
                             <strong>{username}</strong>
                         </div>
-                        <strong>{roles === "Adminstrador" ? "Usuario Administrador": "Usuario Basico"}</strong>
+                        <strong>{roles === "Administrador" ? "Usuario Administrador": "Usuario Basico"}</strong>
 
                         <div className="card-inf">
 

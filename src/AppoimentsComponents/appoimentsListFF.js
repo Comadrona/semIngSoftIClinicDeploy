@@ -9,7 +9,7 @@ function AppoimentsListFF() {
         refetchOnMountOrArgChange: false
     })
     if(isSuccess){
-        let userappoiments=[]
+        let fixedappoiments=[]
         for(let i=0;i<appoiments.length;i++){
                 let user={
                     "appoiment_id": appoiments[i].appoiment_id,
@@ -29,7 +29,7 @@ function AppoimentsListFF() {
                 let hora = parseInt(aux.split(':')[0])-1
                 hora = hora.toLocaleString('en-US',{ minimumIntegerDigits: 2,useGrouping: false})
                 user.fechayhora += '  ' + hora+':00:00'
-                userappoiments.push(user)
+                fixedappoiments.push(user)
         }
         return (
             <>
@@ -50,7 +50,7 @@ function AppoimentsListFF() {
                             </tr>
                         </thead>
                         <tbody>
-                            {appoiments.map((data) => (
+                            {fixedappoiments.map((data) => (
                                 <tr key={data.appoiment_id}>
                                     <td>
                                         <p className={data.estado === "incumplida" ? "status pending" : data.estado === "cancelada" ? "status cancelled":"status delivered"}>{data.estado === "incumplida" ? "Incumplida" : data.estado === "cancelada" ? "Cancelada":"Cumplida"}</p>
