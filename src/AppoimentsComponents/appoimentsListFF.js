@@ -9,6 +9,30 @@ function AppoimentsListFF() {
         refetchOnMountOrArgChange: false
     })
     if(isSuccess){
+        let userappoiments=[]
+        for(let i=0;i<appoiments.length;i++){
+            if(appoiments[i].user_id === id){
+                let user={
+                    "appoiment_id": appoiments[i].appoiment_id,
+                    "service_id": appoiments[i].service_id,
+                    "fechayhora": appoiments[i].fechayhora,
+                    "estado": appoiments[i].estado,
+                    "user_id": appoiments[i].user_id,
+                    "username": appoiments[i].username,
+                    "duracion": appoiments[i].duracion,
+                    "servicename": appoiments[i].servicename,
+                    "observaciones": appoiments[i].observaciones,
+                    "montototal": appoiments[i].montototal,
+                }
+                let aux = user.fechayhora
+                user.fechayhora = aux.split(' ')[0]
+                aux = aux.split(' ')[1]
+                let hora = parseInt(aux.split(':')[0])-1
+                hora = hora.toLocaleString('en-US',{ minimumIntegerDigits: 2,useGrouping: false})
+                user.fechayhora += '  ' + hora+':00:00'
+                userappoiments.push(user)
+            }
+        }
         return (
             <>
             <main className="table">
