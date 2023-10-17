@@ -267,12 +267,19 @@ function AppoimentsList() {
                             'success'
                         ).then(refetch())
                     }else{
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Algo salio mal!',
-                            footer:json.message
-                        })
+                        if(json.message === 'Not allowed to change the appoiment'){
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No puedes cancelar citas tan cercanas'
+                            })
+                        }else{
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: json.message
+                            })
+                        }
                     }
                     } catch (err) {
                     return err.json;
