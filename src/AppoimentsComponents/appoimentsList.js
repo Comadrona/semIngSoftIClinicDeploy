@@ -402,14 +402,14 @@ function AppoimentsList() {
                     "servicename": appoiments[i].servicename,
                     "preciosugerido": appoiments[i].preciosugerido
                 }
+                let aux = user.fechayhora
+                user.fechayhora = aux.split(' ')[0]
+                aux = aux.split(' ')[1]
+                let hora = parseInt(aux.split(':')[0])-1
+                hora = hora.toLocaleString('en-US',{ minimumIntegerDigits: 2,useGrouping: false})
+                userfechayhora += hora+':00'
                 userappoiments.push(user)
-            }/*
-            let aux = appoiments[i].fechayhora
-            userappoiments[i].fechayhora = aux.split(' ')[0]
-            aux = aux.split(' ')[1]
-            let hora = parseInt(aux.split(':')[0])-1
-            hora = hora.toLocaleString('en-US',{ minimumIntegerDigits: 2,useGrouping: false})
-            userappoiments[i].fechayhora += hora+':00'*/
+            }
         }
         return (
             <>
