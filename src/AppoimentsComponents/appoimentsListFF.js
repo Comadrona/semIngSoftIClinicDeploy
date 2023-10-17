@@ -11,7 +11,6 @@ function AppoimentsListFF() {
     if(isSuccess){
         let userappoiments=[]
         for(let i=0;i<appoiments.length;i++){
-            if(appoiments[i].user_id === id){
                 let user={
                     "appoiment_id": appoiments[i].appoiment_id,
                     "service_id": appoiments[i].service_id,
@@ -31,7 +30,6 @@ function AppoimentsListFF() {
                 hora = hora.toLocaleString('en-US',{ minimumIntegerDigits: 2,useGrouping: false})
                 user.fechayhora += '  ' + hora+':00:00'
                 userappoiments.push(user)
-            }
         }
         return (
             <>
