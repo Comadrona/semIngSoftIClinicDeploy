@@ -14,7 +14,7 @@ const Location = () => {
       image: Calendar,
       title: "Realiza tu cita ahora mismo",
       text: "Registra tu cita para la fecha que quieras desde este sitio.",
-      link: "window.location.href = 'https://sem-ing-soft-i-clinic-deploy.vercel.app/user"
+      link: "https://sem-ing-soft-i-clinic-deploy.vercel.app/user"
     },
   ];
   return (
