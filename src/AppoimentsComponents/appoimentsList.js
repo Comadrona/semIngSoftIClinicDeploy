@@ -390,7 +390,12 @@ function AppoimentsList() {
     if(isSuccess){
         const userappoiments = appoiments.filter((item)=> item.user_id === id)
         for(let i=0;i<userappoiments.length;i++){
-            console.log(userappoiments[i].fechayhora)
+            let aux = userappoiments[i].fechayhora
+            userappoiments[i].fechayhora = aux.split(' ')[0]
+            aux = aux.split(' ')[1]
+            hora = parseInt(aux.split(':')[0])-1
+            hora = hora.toLocaleString('en-US',{ minimumIntegerDigits: 2,useGrouping: false})
+            userappoiments[i].fechayhora += hora+':00'
         }
         return (
             <>
