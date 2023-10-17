@@ -86,7 +86,7 @@ function AppoimentsList() {
                                     '¡Creada!',
                                     'La cita fue creada con la fecha y hora: '+date.toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
                                     'success'
-                                ).then(refetch);
+                                ).then(refetch());
                             }else{
                                 Swal.fire({
                                     icon: 'error',
@@ -187,7 +187,7 @@ function AppoimentsList() {
                                 '¡Creada!',
                                 'La cita fue creada con la fecha y hora: '+date.toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
                                 'success'
-                            ).then(refetch);
+                            ).then(refetch());
                         }else{
                             Swal.fire({
                                 icon: 'error',
