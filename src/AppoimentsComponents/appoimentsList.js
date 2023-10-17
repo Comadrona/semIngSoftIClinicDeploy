@@ -393,7 +393,7 @@ function AppoimentsList() {
             let aux = userappoiments[i].fechayhora
             userappoiments[i].fechayhora = aux.split(' ')[0]
             aux = aux.split(' ')[1]
-            hora = parseInt(aux.split(':')[0])-1
+            let hora = parseInt(aux.split(':')[0])-1
             hora = hora.toLocaleString('en-US',{ minimumIntegerDigits: 2,useGrouping: false})
             userappoiments[i].fechayhora += hora+':00'
         }
