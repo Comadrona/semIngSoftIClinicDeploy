@@ -86,7 +86,7 @@ function AppoimentsList() {
                                     '¡Creada!',
                                     'La cita fue creada con la fecha y hora: '+date.toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
                                     'success'
-                                ).then(refetch());
+                                ).then(refetch);
                             }else{
                                 Swal.fire({
                                     icon: 'error',
@@ -187,7 +187,7 @@ function AppoimentsList() {
                                 '¡Creada!',
                                 'La cita fue creada con la fecha y hora: '+date.toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
                                 'success'
-                            ).then(refetch());
+                            ).then(refetch);
                         }else{
                             Swal.fire({
                                 icon: 'error',
@@ -265,7 +265,7 @@ function AppoimentsList() {
                             '¡Cancelada!',
                             'La cita fue cancelada.',
                             'success'
-                        ).then(refetch())
+                        ).then(refetch)
                     }else{
                         if(json.message === 'Not allowed to change the appoiment'){
                             Swal.fire({
@@ -360,7 +360,7 @@ function AppoimentsList() {
                                     'Modificada!',
                                     'La cita fue modificada.',
                                     'success'
-                                ).then(refetch())
+                                ).then(refetch)
                             }else{
                                 if(json.message === 'Not allowed to change the appoiment'){
                                     Swal.fire({
@@ -389,7 +389,6 @@ function AppoimentsList() {
     }
     if(isSuccess){
         let userappoiments=[]
-        refetch()
         for(let i=0;i<appoiments.length;i++){
             if(appoiments[i].user_id === id){
                 let user={
