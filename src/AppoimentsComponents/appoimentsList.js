@@ -24,8 +24,8 @@ function AppoimentsList() {
         isSuccess,
         refetch
     } = useGetAppoimentsQuery('appoimentsList', {
-        refetchOnFocus: false,
-        refetchOnMountOrArgChange: false
+        refetchOnFocus: true,
+        refetchOnMountOrArgChange: true
     })
     if(isSuccessS){
         let servicesOptions={};
