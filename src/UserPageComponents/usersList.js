@@ -628,7 +628,7 @@ function UsersList() {
             </div>
             <main className="table">
                 <section className="table__header">
-                    <h1>Citas registradas</h1>
+                    <h1>Usuarios registrados</h1>
                 </section>
                 <section className="table__body">
                     <table>
