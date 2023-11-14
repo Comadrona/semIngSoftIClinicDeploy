@@ -118,7 +118,7 @@ function AppoimentsList() {
                 selectservicehtml+=`<option value="${propiedad}">${servicesOptions[propiedad]}</option>`
             }
             await Swal.fire({
-                title: 'Crendo la cita de manera manual',
+                title: 'Creando la cita de manera manual',
                 showCancelButton: true,
                 html: `
                 <h1>Datos de la cita</h1>

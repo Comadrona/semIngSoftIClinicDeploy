@@ -34,7 +34,7 @@ function AppoimentsListUser({id}) {
                 selectservicehtml+=`<option value="${propiedad}">${servicesOptions[propiedad]}</option>`
             }
             await Swal.fire({
-                title: 'Crendo la cita de manera manual',
+                title: 'Creando la cita de manera manual',
                 showCancelButton: true,
                 html: `
                 <h1>Datos de la cita</h1>
@@ -263,7 +263,7 @@ function AppoimentsListUser({id}) {
                   }).then(async (result) => {
                     if(result.isConfirmed){
                         await Swal.fire({
-                            title: 'Crendo el perfil clinico de manera manual',
+                            title: 'Creando el perfil clinico de manera manual',
                             showCancelButton: true,
                             html: `
                             <h1>Datos del perfil</h1>
