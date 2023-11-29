@@ -647,12 +647,6 @@ function AppoimentsListUser({id}) {
                     "servicename": appoiments[i].servicename,
                     "preciosugerido": appoiments[i].preciosugerido
                 }
-                let aux = user.fechayhora
-                user.fechayhora = aux.split(' ')[0]
-                aux = aux.split(' ')[1]
-                let hora = parseInt(aux.split(':')[0])-1
-                hora = hora.toLocaleString('en-US',{ minimumIntegerDigits: 2,useGrouping: false})
-                user.fechayhora += '  ' + hora+':00:00'
                 userappoiments.push(user)
             }
         }
