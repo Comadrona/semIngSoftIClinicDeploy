@@ -596,7 +596,8 @@ function AppoimentsListUser({id}) {
                     }
                   }).then(async(result) => {
                     if(result.isConfirmed){
-                        console.log()
+                        let observacionesd = result.value.observaciones;
+                        if(!observaciones)observaciones="N/A";
                         try {
                             const response = await fetch(`${url}/appoiments/fullfiled`,{
                                 method: 'POST',
@@ -606,7 +607,7 @@ function AppoimentsListUser({id}) {
                                 },
                                 body: JSON.stringify({
                                     "appoiment_id": appid,
-                                    observaciones: "N/A",
+                                    observaciones: observacionesd,
                                     montototal:result.value.monto
                                 })
                             })
