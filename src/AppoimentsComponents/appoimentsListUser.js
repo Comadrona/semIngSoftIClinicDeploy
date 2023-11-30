@@ -597,7 +597,7 @@ function AppoimentsListUser({id}) {
                   }).then(async(result) => {
                     if(result.isConfirmed){
                         let observacionesd = result.value.observaciones;
-                        if(!observaciones)observaciones="N/A";
+                        if(!observacionesd)observacionesd="N/A";
                         try {
                             const response = await fetch(`${url}/appoiments/fullfiled`,{
                                 method: 'POST',
